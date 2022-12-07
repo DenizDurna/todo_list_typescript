@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+img {
+  height: 100%;
+}
+
+input,
+button {
+  background-color: transparent;
+  border: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+.App {
+  background-image: linear-gradient(rgb(46, 160, 227), rgb(89, 184, 213));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+  color: white;
+}
+
+.App-header {
+  max-width: 700px;
+  width: 98%;
+}
+
+.new-todo-line {
+  display: flex;
+  margin: auto;
+  width: 90%;
+}
+
+.add-todo {
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  margin-right: 10px;
+  height: 3rem;
+  width: 70%;
+  border: none;
+}
+
+.add-todo button {
+  display: block;
+  width: 10%;
+}
+
+.add-todo i {
+  display: block;
+  background-color: rgb(255, 111, 71);
+  border-radius: 5px;
+  width: 100%;
+  height: 80%;
+}
+
+.add-todo input {
+  width: 85%;
+}
+
+.add-todo img {
+  width: 100%;
+}
+
+.add-todo button {
+  width: 12%;
+}
+
+.new-todo-line select {
+  font-size: 1rem;
+  width: 25%;
+  color: rgb(255, 111, 71);
+  background-image: linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%), linear-gradient(to right, rgb(255, 111, 71), rgb(255, 111, 71));
+  background-position: calc(100% - 18px) calc(1em + 5px), calc(100% - 8px) calc(1em + 5px), 100% 0%;
+  background-size: 10px 10px, 10px 10px, 2.5em 3.6em;
+  background-repeat: no-repeat;
+}
+
+.todo-list {
+  margin: 10% 0;
+  padding: 0;
+  
+}
+
+.todo-list li {
+  background-color: white;
+  color: black;
+  height: 3rem;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.line input {
+  width: 70%;
+}
+
+.line span {
+  display: flex;
+  height: auto;
+}
+
+.line img {
+  height: auto;
+}
+
+#alert {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#done {
+  background-color: rgb(9, 212, 162);
+}
+
+#delete {
+  background-color: rgb(255, 111, 71);
+}
+
+@media (max-width:700px) {
+  :root {
+    font-size: 10px;
+  }
+
+  .App-header {
+    width: 98%;
+  }
+
+  .new-todo-line {
+    flex-direction: column;
+  }
+
+  .new-todo-line select {
+    margin-top: 2%;
+    height: 4rem;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .add-todo {
+    width: 100%;
+    height: 4rem;
+  }
+
+  .add-todo input {
+    width: 90%;
+  }
+}
+
+@media (max-width:450px) {
+  .add-todo button {
+    width: 15%;
+  }
+}
