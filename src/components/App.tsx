@@ -7,7 +7,7 @@ function App() {
   const [todoList, setTodoList] = useState<any>([]);
   const [selectValue, setSelectValue] = useState<any>("All");
   const [listedTodo, setListedTodo] = useState<any>("");
-  const [deleteStatus, setdeleteStatus] = useState<any>(false);
+  const [deleteStatus, setdeleteStatus] = useState<boolean>(false);
   
 
   interface newObj {
@@ -48,7 +48,7 @@ function App() {
   useEffect(() => {
     let localTodo= JSON.parse(localStorage.getItem('localTodoList') as any)
     if (localTodo === null) {
-      localStorage.setItem("localTodoList", JSON.stringify(todoList));
+      localStorage.setItem("localTodoList", JSON.stringify([]));
     } else {
       setTodoList(localTodo)
     }

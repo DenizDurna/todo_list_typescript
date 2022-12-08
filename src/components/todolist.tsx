@@ -2,7 +2,6 @@ import React, { useState, ChangeEvent } from 'react';
 function Todolist(props: any) {
     const [completed, setCompleted] = useState<boolean>(props.value.state)
     const [todoValue, setTodoValue] = useState(props.value.todo)
-    const [deleteTodo, setDeleteTodo] = useState(false)
 
     interface newObj {
         todo: string,
@@ -16,7 +15,6 @@ function Todolist(props: any) {
         setTodoValue(todoValue)
         props.setTodoList(deleteTodo)
         props.setdeleteStatus(true)
-        setDeleteTodo(true)
     }
 
 
@@ -35,19 +33,15 @@ function Todolist(props: any) {
 
 
     // keyUpEdit edit todo
-    const keyUpEdit =(i:any)=>{
-        
-        let deleteTodo = props.todoList.filter((obj: newObj, index: number) => obj.id === i.id)
-        
-        let c=props.todoList.map((obj: newObj, index: number) =>{
-            
-        
+    const keyUpEdit =(i:any)=>{        
+        props.todoList.map((obj: newObj, index: number) =>{
+            let newPropsList=[...props.todoList]
             if(obj.id === i.id){
-                let a=[...props.todoList]
                 obj.todo=todoValue
-                let b=a.splice(index,1,obj)
-        props.setTodoList(a)   
-        } 
+                newPropsList.splice(index,1,obj)
+        props.setTodoList(newPropsList) 
+        }
+        return newPropsList
     })
     }
 
